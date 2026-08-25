@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kin laek - Authentic Thai Restuarant in Egham by Chef Jenny</title>
+    <title>KIN LAEK - Thai Restaurant in Egham by Chef Jenny</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -47,7 +47,7 @@
         .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold-accent); }
 
-        /* Hero Section */
+        /* Hero Section with Line Break Title */
         .hero {
             position: relative;
             color: var(--white);
@@ -78,7 +78,20 @@
             position: relative;
             z-index: 3;
         }
-        .hero h1 { font-size: 3.8rem; color: var(--gold-accent); margin-bottom: 10px; }
+        .hero h1 { 
+            font-size: 3.8rem; 
+            color: var(--gold-accent); 
+            margin-bottom: 15px; 
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+        .hero h1 span.subtitle {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
         .hero p { font-size: 1.3rem; max-width: 650px; margin: 0 auto 30px; font-weight: 300; }
         .btn {
             display: inline-block;
@@ -96,7 +109,7 @@
         .section-title h2 { font-size: 2.8rem; color: var(--sage-dark); }
         .section-title p { color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
 
-        /* Compact & Elegant Chef Section */
+        /* Chef Section */
         .chef-section { background-color: var(--white); }
         .chef-grid {
             display: flex;
@@ -225,6 +238,7 @@
             .chef-grid { flex-direction: column; text-align: center; gap: 30px; }
             .info-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.8rem; }
+            .hero h1 span.subtitle { font-size: 1.8rem; }
             .nav-links { display: none; }
         }
     </style>
@@ -232,7 +246,7 @@
 <body>
 
     <header>
-        <div class="logo">Kin laek</div>
+        <div class="logo">KIN LAEK</div>
         <ul class="nav-links">
             <li><a href="#about">Our Chef</a></li>
             <li><a href="#dishes">Authentic Dishes</a></li>
@@ -243,16 +257,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="kin-laek.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1920&q=80';" alt="Kin laek Thai Cuisine" class="hero-bg">
+        <img src="kin-laek.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1920&q=80';" alt="KIN LAEK Thai Restaurant" class="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Kin laek Thai Cuisine</h1>
+            <h1>
+                KIN LAEK
+                <span class="subtitle">Thai Restaurant</span>
+            </h1>
             <p>Authentic Thai flavors crafted with passion in Egham by Culinary Master Chef Jenny</p>
             <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Visit Our Restaurant</a>
         </div>
     </section>
 
-    <!-- Chef Section (Updated with Smaller Circular Image) -->
+    <!-- Chef Section -->
     <section id="about" class="chef-section">
         <div class="section-title">
             <p>Master Culinary Experience</p>
@@ -269,12 +286,12 @@
             </div>
             <div class="chef-content">
                 <h3>Jariya Priyanu (Chef Jenny)</h3>
-                <h4>Founder & Master Chef of Kin laek</h4>
+                <h4>Founder & Master Chef of KIN LAEK</h4>
                 <p>
-                    With over 25 years of extraordinary culinary expertise in the United Kingdom, <strong>Chef Jenny (Jariya Priyanu)</strong> is a celebrated master of authentic Thai gastronomy. Every dish at Kin laek is personally handcrafted by Chef Jenny using time-honored traditional recipes.
+                    With over 25 years of extraordinary culinary expertise in the United Kingdom, <strong>Chef Jenny (Jariya Priyanu)</strong> is a celebrated master of authentic Thai gastronomy. Every dish at KIN LAEK is personally handcrafted by Chef Jenny using time-honored traditional recipes.
                 </p>
                 <p>
-                    Chef Jenny established her outstanding reputation as the former owner and head chef of the renowned <em>Bong Thai at The Punch Bowl Pub</em>. Bringing decades of passion to Egham, she acquired <em>EAT THAI</em> and transformed it into <strong>Kin laek</strong> — offering a culinary haven for lovers of true Thai flavors.
+                    Chef Jenny established her outstanding reputation as the former owner and head chef of the renowned <em>Bong Thai at The Punch Bowl Pub</em>. Bringing decades of passion to Egham, she acquired <em>EAT THAI</em> and transformed it into <strong>KIN LAEK Thai Restaurant</strong> — offering a culinary haven for lovers of true Thai flavors.
                 </p>
             </div>
         </div>
@@ -429,7 +446,7 @@
     </section>
 
     <footer>
-        <p>© Kin laek Thai Restaurant Egham. Handcrafted Traditions by Chef Jenny (Jariya Priyanu). All Rights Reserved.</p>
+        <p>© KIN LAEK Thai Restaurant Egham. Handcrafted Traditions by Chef Jenny (Jariya Priyanu). All Rights Reserved.</p>
     </footer>
 
 </body>
