@@ -47,7 +47,7 @@
         .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold-accent); }
 
-        /* Hero Section with Line Break Title */
+        /* Hero Section */
         .hero {
             position: relative;
             color: var(--white);
@@ -93,6 +93,12 @@
             margin-top: 5px;
         }
         .hero p { font-size: 1.3rem; max-width: 650px; margin: 0 auto 30px; font-weight: 300; }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
         .btn {
             display: inline-block;
             background: var(--gold-accent);
@@ -103,6 +109,15 @@
             transition: 0.3s;
         }
         .btn:hover { background: var(--white); transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold-accent);
+        }
+        .btn-outline:hover {
+            background: var(--gold-accent);
+            color: var(--sage-dark);
+        }
 
         section { padding: 80px 8%; }
         .section-title { text-align: center; margin-bottom: 50px; }
@@ -155,6 +170,24 @@
         .chef-content h3 { font-size: 2.4rem; color: var(--sage-dark); margin-bottom: 5px; }
         .chef-content h4 { color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; }
         .chef-content p { color: var(--text-muted); margin-bottom: 15px; line-height: 1.8; }
+
+        /* Flipbook Section */
+        .menu-flipbook-section { background: var(--white); text-align: center; }
+        .flipbook-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto 25px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        .flipbook-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         .food-gallery { background: var(--bg-cream); }
         .dishes-grid {
@@ -240,6 +273,7 @@
             .hero h1 { font-size: 2.8rem; }
             .hero h1 span.subtitle { font-size: 1.8rem; }
             .nav-links { display: none; }
+            .flipbook-container { height: 400px; }
         }
     </style>
 </head>
@@ -249,7 +283,8 @@
         <div class="logo">KIN LAEK</div>
         <ul class="nav-links">
             <li><a href="#about">Our Chef</a></li>
-            <li><a href="#dishes">Authentic Dishes</a></li>
+            <li><a href="#full-menu">Full Menu</a></li>
+            <li><a href="#dishes">Recommended Dishes</a></li>
             <li><a href="#hours">Opening Hours</a></li>
             <li><a href="#location">Find Us</a></li>
         </ul>
@@ -265,7 +300,10 @@
                 <span class="subtitle">Thai Restaurant</span>
             </h1>
             <p>Authentic Thai flavors crafted with passion in Egham by Culinary Master Chef Jenny</p>
-            <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn"><i class="fa-solid fa-map-location-dot"></i> Visit Our Restaurant</a>
+            <div class="hero-btns">
+                <a href="#full-menu" class="btn"><i class="fa-solid fa-book-open"></i> View Full Menu</a>
+                <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Visit Us</a>
+            </div>
         </div>
     </section>
 
@@ -297,11 +335,25 @@
         </div>
     </section>
 
-    <!-- Food Gallery & Signature Dishes Section -->
+    <!-- Interactive Flipbook Menu Section -->
+    <section id="full-menu" class="menu-flipbook-section">
+        <div class="section-title">
+            <p>Explore Our Dishes</p>
+            <h2>Full Restaurant Menu</h2>
+        </div>
+        <div class="flipbook-container">
+            <iframe src="https://heyzine.com/flip-book/39e8d98ef9.html" allowfullscreen="true" scrolling="no"></iframe>
+        </div>
+        <a href="https://heyzine.com/flip-book/39e8d98ef9.html" target="_blank" class="btn btn-outline" style="color: var(--sage-dark);">
+            <i class="fa-solid fa-up-right-from-square"></i> Open Menu in Fullscreen
+        </a>
+    </section>
+
+    <!-- Food Gallery & Recommended Dishes Section -->
     <section id="dishes" class="food-gallery">
         <div class="section-title">
-            <p>Authentic Handcrafted Dishes</p>
-            <h2>Signature Creations by Chef Jenny</h2>
+            <p>Authentic Handcrafted Flavors</p>
+            <h2>Recommended Dishes</h2>
         </div>
 
         <div class="dishes-grid">
