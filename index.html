@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIN LAEK - Thai Restaurant in Egham by Chef Jenny</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-cream: #FAF7F2;
+            --card-cream: #F3EEE7;
+            --sage-dark: #2C3E35;
+            --sage-medium: #4A6356;
+            --sage-light: #8FA89B;
+            --sage-soft: #DDE5E0;
+            --gold-accent: #C5A059;
+            --text-dark: #1E2823;
+            --text-muted: #5A6660;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, .font-serif { font-family: 'Cormorant Garamond', serif; }
+        a { text-decoration: none; color: inherit; }
+
+        header {
+            background-color: var(--sage-dark);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .logo { font-size: 2rem; font-weight: 700; color: var(--gold-accent); letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold-accent); }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+            overflow: hidden;
+            background-color: var(--sage-dark);
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(44, 62, 53, 0.75), rgba(44, 62, 53, 0.85));
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+        .hero h1 { 
+            font-size: 3.8rem; 
+            color: var(--gold-accent); 
+            margin-bottom: 15px; 
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+        .hero h1 span.subtitle {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        .hero p { font-size: 1.3rem; max-width: 650px; margin: 0 auto 30px; font-weight: 300; }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--gold-accent);
+            color: var(--sage-dark);
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--white); transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold-accent);
+        }
+        .btn-outline:hover {
+            background: var(--gold-accent);
+            color: var(--sage-dark);
+        }
+
+        section { padding: 80px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.8rem; color: var(--sage-dark); }
+        .section-title p { color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
+        /* Chef Section */
+        .chef-section { background-color: var(--white); }
+        .chef-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .chef-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+        .chef-image-container {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            border: 6px solid var(--card-cream);
+        }
+        .chef-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .chef-badge {
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            background: #2C3E35;
+            color: var(--gold-accent);
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-align: center;
+            border: 2px solid var(--gold-accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .chef-badge span { font-size: 1.2rem; font-weight: 700; display: inline-block; margin-right: 4px; font-family: 'Cormorant Garamond', serif; }
+        .chef-content h3 { font-size: 2.4rem; color: var(--sage-dark); margin-bottom: 5px; }
+        .chef-content h4 { color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; }
+        .chef-content p { color: var(--text-muted); margin-bottom: 15px; line-height: 1.8; }
+
+        /* Flipbook Section */
+        .menu-flipbook-section { background: var(--white); text-align: center; }
+        .flipbook-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto 25px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        .flipbook-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .food-gallery { background: var(--bg-cream); }
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .dish-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+        .dish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        .dish-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .dish-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .dish-info h3 { font-size: 1.5rem; color: var(--sage-dark); margin-bottom: 5px; }
+        .dish-info p { color: var(--gold-accent); font-size: 0.95rem; font-weight: 600; }
+
+        .info-section { background-color: var(--card-cream); }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .info-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        .info-card h3 { font-size: 2rem; color: var(--sage-dark); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .hours-list { list-style: none; }
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #E0D8CD;
+        }
+        .hours-list li:last-child { border-bottom: none; color: #C0392B; font-weight: 600; }
+
+        .reviews-section { background: var(--white); text-align: center; }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .review-card {
+            background: var(--bg-cream);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .stars { color: var(--gold-accent); margin-bottom: 12px; font-size: 1.1rem; }
+        .review-text { font-size: 1.05rem; font-style: italic; color: var(--sage-dark); margin-bottom: 20px; line-height: 1.7; }
+        .reviewer-info { display: flex; align-items: center; justify-content: space-between; }
+        .reviewer-name { font-weight: 700; color: var(--sage-dark); font-size: 1rem; }
+        .reviewer-tag { font-size: 0.8rem; background: var(--sage-soft); color: var(--sage-dark); padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+
+        footer {
+            background: var(--sage-dark);
+            color: var(--bg-cream);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 868px) {
+            .chef-grid { flex-direction: column; text-align: center; gap: 30px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero h1 span.subtitle { font-size: 1.8rem; }
+            .nav-links { display: none; }
+            .flipbook-container { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KIN LAEK</div>
+        <ul class="nav-links">
+            <li><a href="#about">Our Chef</a></li>
+            <li><a href="#full-menu">Full Menu</a></li>
+            <li><a href="#dishes">Recommended Dishes</a></li>
+            <li><a href="#hours">Opening Hours</a></li>
+            <li><a href="#location">Find Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="kin-laek.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1920&q=80';" alt="KIN LAEK Thai Restaurant" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                KIN LAEK
+                <span class="subtitle">Thai Restaurant</span>
+            </h1>
+            <p>Authentic Thai flavors crafted with passion in Egham by Culinary Master Chef Jenny</p>
+            <div class="hero-btns">
+                <a href="#full-menu" class="btn"><i class="fa-solid fa-book-open"></i> View Full Menu</a>
+                <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Visit Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="about" class="chef-section">
+        <div class="section-title">
+            <p>Master Culinary Experience</p>
+            <h2>Meet Chef & Founder Jenny</h2>
+        </div>
+        <div class="chef-grid">
+            <div class="chef-image-wrapper">
+                <div class="chef-image-container">
+                    <img src="chef-jenny.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80';" alt="Chef Jenny Jariya Priyanu">
+                </div>
+                <div class="chef-badge">
+                    <span>25+</span> Years Exp.
+                </div>
+            </div>
+            <div class="chef-content">
+                <h3>Jariya Priyanu (Chef Jenny)</h3>
+                <h4>Founder & Master Chef of KIN LAEK</h4>
+                <p>
+                    With over 25 years of extraordinary culinary expertise in the United Kingdom, <strong>Chef Jenny (Jariya Priyanu)</strong> is a celebrated master of authentic Thai gastronomy. Every dish at KIN LAEK is personally handcrafted by Chef Jenny using time-honored traditional recipes.
+                </p>
+                <p>
+                    Chef Jenny established her outstanding reputation as the former owner and head chef of the renowned <em>Bong Thai at The Punch Bowl Pub</em>. Bringing decades of passion to Egham, she acquired <em>EAT THAI</em> and transformed it into <strong>KIN LAEK Thai Restaurant</strong> — offering a culinary haven for lovers of true Thai flavors.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Flipbook Menu Section -->
+    <section id="full-menu" class="menu-flipbook-section">
+        <div class="section-title">
+            <p>Explore Our Dishes</p>
+            <h2>Full Restaurant Menu</h2>
+        </div>
+        <div class="flipbook-container">
+            <iframe src="https://heyzine.com/flip-book/39e8d98ef9.html" allowfullscreen="true" scrolling="no"></iframe>
+        </div>
+        <a href="https://heyzine.com/flip-book/39e8d98ef9.html" target="_blank" class="btn btn-outline" style="color: var(--sage-dark);">
+            <i class="fa-solid fa-up-right-from-square"></i> Open Menu in Fullscreen
+        </a>
+    </section>
+
+    <!-- Food Gallery & Recommended Dishes Section -->
+    <section id="dishes" class="food-gallery">
+        <div class="section-title">
+            <p>Authentic Handcrafted Flavors</p>
+            <h2>Recommended Dishes</h2>
+        </div>
+
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <img src="massaman.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&w=600&q=80';" alt="Massaman Curry" class="dish-img">
+                <div class="dish-info">
+                    <h3>Massaman Curry</h3>
+                    <p>Rich, aromatic & handcrafted</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="larb.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80';" alt="Authentic Thai Larb" class="dish-img">
+                <div class="dish-info">
+                    <h3>Authentic Thai Larb</h3>
+                    <p>Zesty minced meat with fresh herbs</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="pad-thai.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=600&q=80';" alt="Traditional Pad Thai" class="dish-img">
+                <div class="dish-info">
+                    <h3>Traditional Pad Thai</h3>
+                    <p>Classic stir-fried rice noodles</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="pad-see-ew.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80';" alt="Pad See Ew" class="dish-img">
+                <div class="dish-info">
+                    <h3>Pad See Ew</h3>
+                    <p>Stir-fried flat noodles with soy sauce</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="green-curry.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=600&q=80';" alt="Thai Green Curry" class="dish-img">
+                <div class="dish-info">
+                    <h3>Thai Green Curry</h3>
+                    <p>Fragrant coconut milk & fresh basil</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="cashew-nut.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80';" alt="Stir-Fried Cashew Nut" class="dish-img">
+                <div class="dish-info">
+                    <h3>Stir-Fried Cashew Nut</h3>
+                    <p>Crispy chicken with roasted cashews</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="spring-rolls.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80';" alt="Crispy Spring Rolls" class="dish-img">
+                <div class="dish-info">
+                    <h3>Crispy Spring Rolls</h3>
+                    <p>Golden fried with sweet chili dip</p>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="prawn-rolls.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80';" alt="Prawn Spring Rolls" class="dish-img">
+                <div class="dish-info">
+                    <h3>Prawn Spring Rolls</h3>
+                    <p>Crispy wrapped whole prawns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section id="hours" class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fa-regular fa-clock" style="color: var(--gold-accent);"></i> Opening Hours</h3>
+                <ul class="hours-list">
+                    <li><span>Monday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
+                    <li><span>Tuesday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
+                    <li><span>Wednesday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
+                    <li><span>Thursday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
+                    <li><span>Friday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
+                    <li><span>Saturday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
+                    <li><span>Sunday</span> <span>CLOSED</span></li>
+                </ul>
+            </div>
+
+            <div id="location" class="info-card">
+                <h3><i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> Location & Directions</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Located conveniently in Egham, offering an authentic Thai dining experience.
+                </p>
+                <div style="margin-bottom: 30px;">
+                    <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn" style="width: 100%; text-align: center;">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Open Location in Google Maps
+                    </a>
+                </div>
+                <div style="border-top: 1px solid #E0D8CD; padding-top: 20px;">
+                    <p><strong>Former Heritage:</strong> Formerly EAT THAI & Bong Thai Pub</p>
+                    <p><strong>Cuisine Style:</strong> 100% Authentic Handcrafted Thai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Google Reviews Section -->
+    <section class="reviews-section">
+        <div class="section-title">
+            <p>Guest Experiences</p>
+            <h2>What Our Diners Say</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"This is newly opened on the site of the old Eat Thai. It now has a similar lunchtime menu available with a small starter and a main course, with plenty of choice at a reasonable price. Worth a visit for a pleasant, quickly prepared tasty lunch."</p>
+                </div>
+                <div class="reviewer-info">
+                    <span class="reviewer-name">Kevin Cobbold</span>
+                    <span class="reviewer-tag"><i class="fa-brands fa-google"></i> Local Guide</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"This authentic Thai restaurant has just undergone a refurbishment and offers wonderful service. The food is delicious and incredibly value for money. The staff are very welcoming."</p>
+                </div>
+                <div class="reviewer-info">
+                    <span class="reviewer-name">Ngamsin Kerdpron</span>
+                    <span class="reviewer-tag"><i class="fa-brands fa-google"></i> Google Review</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn" style="background: transparent; color: var(--sage-dark); border: 2px solid var(--sage-dark);">
+            <i class="fa-brands fa-google"></i> Read All Live Reviews on Google
+        </a>
+    </section>
+
+    <footer>
+        <p>© KIN LAEK Thai Restaurant Egham. Handcrafted Traditions by Chef Jenny (Jariya Priyanu). All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
