@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIN LAEK - Thai Restaurant in Egham by Chef Jenny</title>
+    <title>KIN LAEK - Thai Restaurant in Egham</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -43,9 +43,11 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         .logo { font-size: 2rem; font-weight: 700; color: var(--gold-accent); letter-spacing: 1px; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
         .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold-accent); }
+        .ig-nav { display: flex; gap: 10px; }
+        .ig-nav a { color: var(--gold-accent); font-size: 1.2rem; }
 
         /* Hero Section */
         .hero {
@@ -124,14 +126,14 @@
         .section-title h2 { font-size: 2.8rem; color: var(--sage-dark); }
         .section-title p { color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
 
-        /* Chef Section */
+        /* Chef & Founder Section */
         .chef-section { background-color: var(--white); }
         .chef-grid {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 60px;
-            max-width: 1000px;
+            gap: 50px;
+            max-width: 1100px;
             margin: 0 auto;
         }
         .chef-image-wrapper {
@@ -139,12 +141,12 @@
             flex-shrink: 0;
         }
         .chef-image-container {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+            width: 320px;
+            height: 440px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border: 6px solid var(--card-cream);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            border: 4px solid var(--card-cream);
         }
         .chef-image-container img {
             width: 100%;
@@ -154,11 +156,11 @@
         }
         .chef-badge {
             position: absolute;
-            bottom: -10px;
-            right: 10px;
+            bottom: -15px;
+            right: -15px;
             background: #2C3E35;
             color: var(--gold-accent);
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 30px;
             text-align: center;
             border: 2px solid var(--gold-accent);
@@ -166,10 +168,101 @@
             font-size: 0.85rem;
             font-weight: 600;
         }
-        .chef-badge span { font-size: 1.2rem; font-weight: 700; display: inline-block; margin-right: 4px; font-family: 'Cormorant Garamond', serif; }
+        .chef-badge span { font-size: 1.3rem; font-weight: 700; display: inline-block; margin-right: 4px; font-family: 'Cormorant Garamond', serif; }
         .chef-content h3 { font-size: 2.4rem; color: var(--sage-dark); margin-bottom: 5px; }
         .chef-content h4 { color: var(--gold-accent); font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; }
         .chef-content p { color: var(--text-muted); margin-bottom: 15px; line-height: 1.8; }
+        .journey-tag {
+            display: inline-block;
+            background: var(--card-cream);
+            color: var(--sage-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Student Section */
+        .student-section { background: var(--card-cream); }
+        .student-card-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+        .student-card-container h3 { font-size: 2.2rem; color: var(--sage-dark); margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
+        .student-card-container img { 
+            width: 100%; 
+            height: auto;
+            border-radius: 12px; 
+            margin: 20px 0; 
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .badge-price { background: #27ae60; color: white; padding: 6px 16px; border-radius: 20px; font-size: 1.1rem; font-weight: 700; }
+
+        /* Private Catering Section (Standalone Banner) */
+        .catering-section {
+            background-color: var(--sage-dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .catering-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid var(--gold-accent);
+            border-radius: 24px;
+            padding: 45px;
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .catering-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .catering-header h2 {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+        .catering-header p {
+            font-size: 1.15rem;
+            color: var(--bg-cream);
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .catering-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        .catering-detail-item {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 20px 25px;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold-accent);
+        }
+        .catering-detail-item h4 {
+            color: var(--gold-accent);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .catering-detail-item p {
+            color: var(--bg-cream);
+            font-size: 1rem;
+        }
+        .catering-cta {
+            text-align: center;
+        }
 
         /* Flipbook Section */
         .menu-flipbook-section { background: var(--white); text-align: center; }
@@ -183,11 +276,7 @@
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0,0,0,0.15);
         }
-        .flipbook-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .flipbook-container iframe { width: 100%; height: 100%; border: none; }
 
         .food-gallery { background: var(--bg-cream); }
         .dishes-grid {
@@ -202,26 +291,16 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             transition: 0.3s;
         }
-        .dish-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-        }
-        .dish-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-        .dish-info {
-            padding: 20px;
-            text-align: center;
-        }
+        .dish-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+        .dish-img { width: 100%; height: 220px; object-fit: cover; }
+        .dish-info { padding: 20px; text-align: center; }
         .dish-info h3 { font-size: 1.5rem; color: var(--sage-dark); margin-bottom: 5px; }
         .dish-info p { color: var(--gold-accent); font-size: 0.95rem; font-weight: 600; }
 
-        .info-section { background-color: var(--card-cream); }
+        .info-section { background-color: var(--white); }
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .info-card {
-            background: var(--white);
+            background: var(--bg-cream);
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.04);
@@ -236,7 +315,7 @@
         }
         .hours-list li:last-child { border-bottom: none; color: #C0392B; font-weight: 600; }
 
-        .reviews-section { background: var(--white); text-align: center; }
+        .reviews-section { background: var(--bg-cream); text-align: center; }
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -244,7 +323,7 @@
             margin-bottom: 40px;
         }
         .review-card {
-            background: var(--bg-cream);
+            background: var(--white);
             padding: 35px;
             border-radius: 20px;
             text-align: left;
@@ -265,7 +344,11 @@
             text-align: center;
             padding: 40px 20px;
             font-size: 0.9rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
         }
+        .social-links { margin-bottom: 15px; }
+        .social-links a { color: var(--gold-accent); font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--white); }
 
         @media (max-width: 868px) {
             .chef-grid { flex-direction: column; text-align: center; gap: 30px; }
@@ -274,6 +357,8 @@
             .hero h1 span.subtitle { font-size: 1.8rem; }
             .nav-links { display: none; }
             .flipbook-container { height: 400px; }
+            .catering-box { padding: 25px; }
+            .catering-header h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -282,11 +367,18 @@
     <header>
         <div class="logo">KIN LAEK</div>
         <ul class="nav-links">
-            <li><a href="#about">Our Chef</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#student-offer">Student Special</a></li>
+            <li><a href="#catering">Catering</a></li>
             <li><a href="#full-menu">Full Menu</a></li>
             <li><a href="#dishes">Recommended Dishes</a></li>
             <li><a href="#hours">Opening Hours</a></li>
-            <li><a href="#location">Find Us</a></li>
+            <li>
+                <div class="ig-nav">
+                    <a href="https://www.instagram.com/kinlaekegham" target="_blank" title="Instagram 1"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/kin.laek.egham" target="_blank" title="Instagram 2"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </li>
         </ul>
     </header>
 
@@ -299,7 +391,7 @@
                 KIN LAEK
                 <span class="subtitle">Thai Restaurant</span>
             </h1>
-            <p>Authentic Thai flavors crafted with passion in Egham by Culinary Master Chef Jenny</p>
+            <p>Authentic Thai flavors crafted with 25+ years of passion in Egham by Owner Jenny & Chef Prachya</p>
             <div class="hero-btns">
                 <a href="#full-menu" class="btn"><i class="fa-solid fa-book-open"></i> View Full Menu</a>
                 <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Visit Us</a>
@@ -307,30 +399,88 @@
         </div>
     </section>
 
-    <!-- Chef Section -->
+    <!-- Story / Owner & Chef Section -->
     <section id="about" class="chef-section">
         <div class="section-title">
-            <p>Master Culinary Experience</p>
-            <h2>Meet Chef & Founder Jenny</h2>
+            <p>25+ Years Culinary Journey</p>
+            <h2>Meet Our Owner & Head Chef</h2>
         </div>
         <div class="chef-grid">
             <div class="chef-image-wrapper">
                 <div class="chef-image-container">
-                    <img src="chef-jenny.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80';" alt="Chef Jenny Jariya Priyanu">
+                    <img src="founder-chef.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80';" alt="Jenny and Chef Prachya Priyanu">
                 </div>
                 <div class="chef-badge">
                     <span>25+</span> Years Exp.
                 </div>
             </div>
             <div class="chef-content">
-                <h3>Jariya Priyanu (Chef Jenny)</h3>
-                <h4>Founder & Master Chef of KIN LAEK</h4>
+                <h3>Jenny & Chef Prachya Priyanu</h3>
+                <h4>Founder & Master Chef of KIN LAEK (กินแหลก)</h4>
                 <p>
-                    With over 25 years of extraordinary culinary expertise in the United Kingdom, <strong>Chef Jenny (Jariya Priyanu)</strong> is a celebrated master of authentic Thai gastronomy. Every dish at KIN LAEK is personally handcrafted by Chef Jenny using time-honored traditional recipes.
+                    <strong>KIN LAEK</strong> is founded by <strong>Jenny (Jariya Priyanu)</strong>, together with her husband, master Head Chef <strong>Prachya Priyanu</strong>. With a shared culinary passion spanning over 25 years in the UK, they bring time-honored Thai traditions and heartfelt hospitality to every plate.
                 </p>
                 <p>
-                    Chef Jenny established her outstanding reputation as the former owner and head chef of the renowned <em>Bong Thai at The Punch Bowl Pub</em>. Bringing decades of passion to Egham, she acquired <em>EAT THAI</em> and transformed it into <strong>KIN LAEK Thai Restaurant</strong> — offering a culinary haven for lovers of true Thai flavors.
+                    Their extraordinary journey began in <strong>Colnbrook</strong>, expanded through <strong>Staines</strong>, and now proudly thrives in <strong>Egham</strong>. Bringing decades of experience to the community, they offer authentic, handcrafted Thai food made with love and dedication.
                 </p>
+                <div class="journey-tag">
+                    <i class="fa-solid fa-location-dot"></i> Colnbrook &rarr; Staines &rarr; Now Egham
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Special Section -->
+    <section id="student-offer" class="student-section">
+        <div class="section-title">
+            <p>Exclusive Student Promotion</p>
+            <h2>Student Special Offer</h2>
+        </div>
+        <div class="student-card-container">
+            <h3>
+                <span><i class="fa-solid fa-graduation-cap" style="color: var(--gold-accent);"></i> Student Special</span>
+                <span class="badge-price">Only £6.50</span>
+            </h3>
+            <p style="color: var(--text-muted); font-size: 1.05rem;">
+                Special discounted pricing exclusively for students! Enjoy simple, delicious, and satisfying dishes, or order your favorite <strong>À La Carte (อาหารตามสั่ง)</strong> items at friendly prices.
+            </p>
+            <img src="student.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80';" alt="Student Special Menu">
+            <ul style="list-style: none; color: var(--sage-dark); font-weight: 600; font-size: 1.05rem; display: flex; flex-direction: column; gap: 8px;">
+                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Fried Chicken / Pork with Rice</li>
+                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Plain Noodles with Sauce & Fried Meat</li>
+                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Vegetarian Stir-Fried Vegetables</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Standalone Catering Section -->
+    <section id="catering" class="catering-section">
+        <div class="catering-box">
+            <div class="catering-header">
+                <p style="color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 5px;">Bespoke Events & Parties</p>
+                <h2><i class="fa-solid fa-utensils"></i> Private Catering Service</h2>
+                <p>Hosting an event or celebration? We offer friendly, affordable catering tailored to your needs—either hosted inside our restaurant or delivered directly to your external venue.</p>
+            </div>
+            
+            <div class="catering-details-grid">
+                <div class="catering-detail-item">
+                    <h4><i class="fa-regular fa-calendar-check"></i> Advance Booking</h4>
+                    <p>1 Week Notice Required</p>
+                </div>
+                <div class="catering-detail-item">
+                    <h4><i class="fa-solid fa-users"></i> Weekdays (Mon–Sat)</h4>
+                    <p>Minimum 10 Guests</p>
+                </div>
+                <div class="catering-detail-item">
+                    <h4><i class="fa-solid fa-users"></i> Sundays</h4>
+                    <p>Minimum 20 Guests</p>
+                </div>
+            </div>
+
+            <div class="catering-cta">
+                <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+                    <i class="fa-solid fa-phone"></i> Contact Us for Catering Inquiry
+                </a>
             </div>
         </div>
     </section>
@@ -429,12 +579,12 @@
             <div class="info-card">
                 <h3><i class="fa-regular fa-clock" style="color: var(--gold-accent);"></i> Opening Hours</h3>
                 <ul class="hours-list">
-                    <li><span>Monday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
-                    <li><span>Tuesday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
-                    <li><span>Wednesday</span> <span>12:00 – 3:00 PM, 5:00 – 9:30 PM</span></li>
-                    <li><span>Thursday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
-                    <li><span>Friday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
-                    <li><span>Saturday</span> <span>12:00 – 3:00 PM, 5:00 – 10:00 PM</span></li>
+                    <li><span>Monday</span> <span>12:00 – 3:00 PM, 5:30 – 9:30 PM</span></li>
+                    <li><span>Tuesday</span> <span>12:00 – 3:00 PM, 5:30 – 9:30 PM</span></li>
+                    <li><span>Wednesday</span> <span>12:00 – 3:00 PM, 5:30 – 9:30 PM</span></li>
+                    <li><span>Thursday</span> <span>12:00 – 3:00 PM, 5:30 – 10:00 PM</span></li>
+                    <li><span>Friday</span> <span>12:00 – 3:00 PM, 5:30 – 10:00 PM</span></li>
+                    <li><span>Saturday</span> <span>12:00 – 3:00 PM, 5:30 – 10:00 PM</span></li>
                     <li><span>Sunday</span> <span>CLOSED</span></li>
                 </ul>
             </div>
@@ -442,7 +592,7 @@
             <div id="location" class="info-card">
                 <h3><i class="fa-solid fa-location-dot" style="color: var(--gold-accent);"></i> Location & Directions</h3>
                 <p style="color: var(--text-muted); margin-bottom: 20px;">
-                    Located conveniently in Egham, offering an authentic Thai dining experience.
+                    67 High Street, Egham, TW20 9EY
                 </p>
                 <div style="margin-bottom: 30px;">
                     <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn" style="width: 100%; text-align: center;">
@@ -450,8 +600,8 @@
                     </a>
                 </div>
                 <div style="border-top: 1px solid #E0D8CD; padding-top: 20px;">
-                    <p><strong>Former Heritage:</strong> Formerly EAT THAI & Bong Thai Pub</p>
                     <p><strong>Cuisine Style:</strong> 100% Authentic Handcrafted Thai</p>
+                    <p><strong>Services:</strong> Dine-in | Takeaway | Private Catering</p>
                 </div>
             </div>
         </div>
@@ -498,7 +648,11 @@
     </section>
 
     <footer>
-        <p>© KIN LAEK Thai Restaurant Egham. Handcrafted Traditions by Chef Jenny (Jariya Priyanu). All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/kinlaekegham" target="_blank" title="KIN LAEK Instagram 1"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/kin.laek.egham" target="_blank" title="KIN LAEK Instagram 2"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>© KIN LAEK Thai Restaurant Egham. Handcrafted Traditions by Jenny & Chef Prachya Priyanu. All Rights Reserved.</p>
     </footer>
 
 </body>
