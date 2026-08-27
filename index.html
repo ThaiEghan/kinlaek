@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIN LAEK - Thai Restaurant in Egham</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -18,6 +18,7 @@
             --text-dark: #1E2823;
             --text-muted: #5A6660;
             --white: #FFFFFF;
+            --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,11 +44,27 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         .logo { font-size: 2rem; font-weight: 700; color: var(--gold-accent); letter-spacing: 1px; }
-        .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
-        .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--bg-cream); font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--gold-accent); }
-        .ig-nav { display: flex; gap: 10px; }
-        .ig-nav a { color: var(--gold-accent); font-size: 1.2rem; }
+        
+        .nav-ig-btn {
+            background: var(--ig-gradient);
+            color: white !important;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+            transition: 0.3s;
+        }
+        .nav-ig-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
 
         /* Hero Section */
         .hero {
@@ -122,7 +139,7 @@
         }
 
         section { padding: 80px 8%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2.8rem; color: var(--sage-dark); }
         .section-title p { color: var(--gold-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
 
@@ -183,28 +200,7 @@
             margin-top: 10px;
         }
 
-        /* Student Section */
-        .student-section { background: var(--card-cream); }
-        .student-card-container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-        }
-        .student-card-container h3 { font-size: 2.2rem; color: var(--sage-dark); margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-        .student-card-container img { 
-            width: 100%; 
-            height: auto;
-            border-radius: 12px; 
-            margin: 20px 0; 
-            display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .badge-price { background: #27ae60; color: white; padding: 6px 16px; border-radius: 20px; font-size: 1.1rem; font-weight: 700; }
-
-        /* Private Catering Section (Standalone Banner) */
+        /* Standalone Catering Section (Full Width Banner) */
         .catering-section {
             background-color: var(--sage-dark);
             color: var(--white);
@@ -263,6 +259,105 @@
         .catering-cta {
             text-align: center;
         }
+
+        /* Compact Student Special Section */
+        .student-section { background: var(--bg-cream); padding: 50px 8%; }
+        .student-horizontal-card {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            border: 1px solid var(--card-cream);
+        }
+        .student-img-wrap {
+            width: 200px;
+            flex-shrink: 0;
+        }
+        .student-img-wrap img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+        .student-content {
+            flex-grow: 1;
+        }
+        .student-content h3 {
+            font-size: 1.8rem;
+            color: var(--sage-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .badge-price { background: #27ae60; color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.95rem; font-weight: 700; }
+        .student-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
+        .student-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; font-weight: 600; color: var(--sage-dark); }
+        .student-list li { background: var(--card-cream); padding: 4px 12px; border-radius: 20px; }
+
+        /* Social Contact Section (Instagram Focus) */
+        .social-connect-section {
+            background-color: var(--card-cream);
+            text-align: center;
+        }
+        .ig-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .ig-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px 40px;
+            flex: 1;
+            min-width: 280px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: 0.3s;
+        }
+        .ig-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .ig-icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--ig-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 15px rgba(220, 39, 67, 0.3);
+        }
+        .ig-card h3 { font-size: 1.4rem; color: var(--sage-dark); margin-bottom: 4px; }
+        .ig-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+        .btn-ig {
+            background: var(--ig-gradient);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+            transition: 0.3s;
+        }
+        .btn-ig:hover { opacity: 0.9; }
 
         /* Flipbook Section */
         .menu-flipbook-section { background: var(--white); text-align: center; }
@@ -346,9 +441,6 @@
             font-size: 0.9rem;
             border-top: 1px solid rgba(197, 160, 89, 0.2);
         }
-        .social-links { margin-bottom: 15px; }
-        .social-links a { color: var(--gold-accent); font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
-        .social-links a:hover { color: var(--white); }
 
         @media (max-width: 868px) {
             .chef-grid { flex-direction: column; text-align: center; gap: 30px; }
@@ -359,6 +451,9 @@
             .flipbook-container { height: 400px; }
             .catering-box { padding: 25px; }
             .catering-header h2 { font-size: 2.2rem; }
+            .student-horizontal-card { flex-direction: column; text-align: center; }
+            .student-img-wrap { width: 100%; max-width: 250px; }
+            .student-list { justify-content: center; }
         }
     </style>
 </head>
@@ -368,16 +463,14 @@
         <div class="logo">KIN LAEK</div>
         <ul class="nav-links">
             <li><a href="#about">Our Story</a></li>
-            <li><a href="#student-offer">Student Special</a></li>
             <li><a href="#catering">Catering</a></li>
             <li><a href="#full-menu">Full Menu</a></li>
             <li><a href="#dishes">Recommended Dishes</a></li>
             <li><a href="#hours">Opening Hours</a></li>
             <li>
-                <div class="ig-nav">
-                    <a href="https://www.instagram.com/kinlaekegham" target="_blank" title="Instagram 1"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.instagram.com/kin.laek.egham" target="_blank" title="Instagram 2"><i class="fa-brands fa-instagram"></i></a>
-                </div>
+                <a href="#social-connect" class="nav-ig-btn">
+                    <i class="fa-brands fa-instagram"></i> Follow Instagram
+                </a>
             </li>
         </ul>
     </header>
@@ -424,36 +517,13 @@
                     Their extraordinary journey began in <strong>Colnbrook</strong>, expanded through <strong>Staines</strong>, and now proudly thrives in <strong>Egham</strong>. Bringing decades of experience to the community, they offer authentic, handcrafted Thai food made with love and dedication.
                 </p>
                 <div class="journey-tag">
-                    <i class="fa-solid fa-location-dot"></i> Colnbrook &rarr; Staines &rarr; Now Egham
+                    <i class="fa-solid fa-location-dot"></i> Colnbrook &rrarr; Staines &rrarr; Now Egham
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Student Special Section -->
-    <section id="student-offer" class="student-section">
-        <div class="section-title">
-            <p>Exclusive Student Promotion</p>
-            <h2>Student Special Offer</h2>
-        </div>
-        <div class="student-card-container">
-            <h3>
-                <span><i class="fa-solid fa-graduation-cap" style="color: var(--gold-accent);"></i> Student Special</span>
-                <span class="badge-price">Only £6.50</span>
-            </h3>
-            <p style="color: var(--text-muted); font-size: 1.05rem;">
-                Special discounted pricing exclusively for students! Enjoy simple, delicious, and satisfying dishes, or order your favorite <strong>À La Carte (อาหารตามสั่ง)</strong> items at friendly prices.
-            </p>
-            <img src="student.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80';" alt="Student Special Menu">
-            <ul style="list-style: none; color: var(--sage-dark); font-weight: 600; font-size: 1.05rem; display: flex; flex-direction: column; gap: 8px;">
-                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Fried Chicken / Pork with Rice</li>
-                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Plain Noodles with Sauce & Fried Meat</li>
-                <li><i class="fa-solid fa-circle-check" style="color: #27ae60;"></i> Vegetarian Stir-Fried Vegetables</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Standalone Catering Section -->
+    <!-- Standalone Catering Section (Full Width Banner) -->
     <section id="catering" class="catering-section">
         <div class="catering-box">
             <div class="catering-header">
@@ -480,6 +550,59 @@
             <div class="catering-cta">
                 <a href="https://share.google/PgC1848dnFSPoklKO" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
                     <i class="fa-solid fa-phone"></i> Contact Us for Catering Inquiry
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compact Student Special Section -->
+    <section id="student-offer" class="student-section">
+        <div class="student-horizontal-card">
+            <div class="student-img-wrap">
+                <img src="student.jpg" onError="this.onerror=null;this.src='https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80';" alt="Student Offer Banner">
+            </div>
+            <div class="student-content">
+                <h3>
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--gold-accent);"></i> Student Special 
+                    <span class="badge-price">Only £6.50</span>
+                </h3>
+                <p>Special discounted pricing exclusively for students! Enjoy simple, satisfying dishes or your favorite À La Carte items at friendly prices.</p>
+                <ul class="student-list">
+                    <li><i class="fa-solid fa-check" style="color: #27ae60;"></i> Fried Chicken/Pork with Rice</li>
+                    <li><i class="fa-solid fa-check" style="color: #27ae60;"></i> Plain Noodles with Sauce</li>
+                    <li><i class="fa-solid fa-check" style="color: #27ae60;"></i> Stir-Fried Veggies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Connect / Instagram Highlight Section -->
+    <section id="social-connect" class="social-connect-section">
+        <div class="section-title">
+            <p>Follow Our Journey</p>
+            <h2>Connect With Us On Instagram</h2>
+        </div>
+
+        <div class="ig-grid">
+            <div class="ig-card">
+                <div class="ig-icon-box">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <h3>@kinlaekegham</h3>
+                <p>Official Instagram page for daily updates, behind-the-scenes & special dishes.</p>
+                <a href="https://www.instagram.com/kinlaekegham" target="_blank" class="btn-ig">
+                    <i class="fa-brands fa-instagram"></i> Follow @kinlaekegham
+                </a>
+            </div>
+
+            <div class="ig-card">
+                <div class="ig-icon-box">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <h3>@kin.laek.egham</h3>
+                <p>Follow our customer community, reviews, stories & food highlights.</p>
+                <a href="https://www.instagram.com/kin.laek.egham" target="_blank" class="btn-ig">
+                    <i class="fa-brands fa-instagram"></i> Follow @kin.laek.egham
                 </a>
             </div>
         </div>
@@ -648,10 +771,10 @@
     </section>
 
     <footer>
-        <div class="social-links">
-            <a href="https://www.instagram.com/kinlaekegham" target="_blank" title="KIN LAEK Instagram 1"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.instagram.com/kin.laek.egham" target="_blank" title="KIN LAEK Instagram 2"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+        <p style="margin-bottom: 15px;">
+            <a href="https://www.instagram.com/kinlaekegham" target="_blank" style="color: var(--gold-accent); margin: 0 10px; font-weight: 600;"><i class="fa-brands fa-instagram"></i> @kinlaekegham</a> | 
+            <a href="https://www.instagram.com/kin.laek.egham" target="_blank" style="color: var(--gold-accent); margin: 0 10px; font-weight: 600;"><i class="fa-brands fa-instagram"></i> @kin.laek.egham</a>
+        </p>
         <p>© KIN LAEK Thai Restaurant Egham. Handcrafted Traditions by Jenny & Chef Prachya Priyanu. All Rights Reserved.</p>
     </footer>
 
